@@ -1,0 +1,30 @@
+digraph {
+	main [label="main.ipynb"]
+	main -> trading_bot
+	main -> capital_gains_helper_methods
+	main -> "matplotlib.pyplot"
+	main -> copy
+	capital_gains_helper_methods [label="capital_gains_helper_methods.py"]
+	capital_gains_helper_methods -> stock_ledger
+	capital_gains_helper_methods -> random
+	ledger_entry [label="ledger_entry.py"]
+	ledger_entry -> linked_deque
+	ledger_entry -> stock_purchase
+	linked_deque [label="linked_deque.py"]
+	linked_deque -> "collections.abc"
+	stock_ledger [label="stock_ledger.py"]
+	stock_ledger -> ledger_entry
+	stock_ledger -> stock_sale
+	stock_ledger -> random
+	stock_purchase [label="stock_purchase.py"]
+	stock_sale [label="stock_sale.py"]
+	stock_sale -> stock_purchase
+	trading_bot [label="trading_bot.py"]
+	trading_bot -> time
+	trading_bot -> stock_ledger
+	"matplotlib.pyplot" [label="matplotlib.pyplot"]
+	copy [label=copy]
+	random [label=random]
+	"collections.abc" [label="collections.abc"]
+	time [label=time]
+}
